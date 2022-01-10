@@ -1,6 +1,6 @@
 name: Navigation
 version: 1.0.0
-main: navi\Main
+main: navi\Loader
 api: 4.0.0
 author: RarkHopper
 description: JukeBoxPopupにナビゲーションを追加する
