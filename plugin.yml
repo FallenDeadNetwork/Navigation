@@ -1,0 +1,7 @@
+name: Navigation
+version: 1.0.0
+main: navi\Main
+api: 4.0.0
+author: RarkHopper
+description: JukeBoxPopupにナビゲーションを追加する
+load: POSTWORLD

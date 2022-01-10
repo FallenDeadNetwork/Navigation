@@ -1,0 +1,2 @@
+# Navigation
+JukeBoxPopupバーにナビゲーションを追加するプラグインです。
