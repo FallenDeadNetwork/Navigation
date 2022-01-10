@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace navi;
 
+use navi\order\NavigationOrder;
 use navi\utils\SingletonTrait;
 use pocketmine\player\Player;
 
@@ -25,7 +26,7 @@ abstract class NavigationPool{
 	}
 
 	/**
-	 * この関数でorderを取得すると
+	 * この関数でorderを取得すると格納済みorderの全てのライフタイムが減少します
 	 *
 	 * @param Player $player
 	 * @return NavigationOrder|null

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace navi;
 
+use navi\order\NavigationOrder;
 use pocketmine\player\Player;
 use pocketmine\scheduler\Task;
 use pocketmine\Server;
@@ -18,6 +19,6 @@ class SendNavigationTask extends Task{
 	}
 
 	protected function send(Player $player, NavigationOrder $order):void{
-		$player->sendJukeboxPopup($order->getTxt(), []);
+		$player->sendJukeboxPopup($order->getTxt($player), []);
 	}
 }
