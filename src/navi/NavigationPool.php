@@ -7,7 +7,7 @@ use navi\order\NavigationOrder;
 use navi\utils\SingletonTrait;
 use pocketmine\player\Player;
 
-abstract class NavigationPool{
+class NavigationPool{
 	private function __construct(){/** NOOP */}
 	use SingletonTrait;
 	/** @var NavigationOrder[][] */
@@ -37,8 +37,8 @@ abstract class NavigationPool{
 		$key = max(count($keys) === 0? ['empty']: $keys);
 		
 		if(!is_int($key) or !isset(self::$orders[$player->getName()][$key])) return null;
-		$this->reduceLifeTimes();
 		$order = self::$orders[$player->getName()][$key];
+		$this->reduceLifeTimes();
 		return $order;
 	}
 
