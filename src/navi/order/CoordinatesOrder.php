@@ -29,21 +29,21 @@ class CoordinatesOrder extends NavigationOrder{
 			6 => $this->else_slot,
 			7 => $this->else_slot,
 			8 => $this->else_slot,
-            9 => $this->else_slot
+			9 => $this->else_slot
 		];
 		$yaw = $player->getLocation()->getYaw();
 		$v1 = $this->toVector2($player->getPosition());
-        
+
 		foreach($this->coordinates as $v2){
 			$distance =  $v2->getSendDistance();
 
 			if($distance !== null and $v1->distance($v2) > $distance) continue;
 			$azimuth = 90 - rad2deg(atan2($v2->y - $v1->y, $v2->x - $v1->x)) + 90 + $yaw;
-            
+
 			if($azimuth > 360) $azimuth -= 360;
-            if($azimuth < 0) $azimuth += 360;
+			if($azimuth < 0) $azimuth += 360;
 			if($azimuth > 180) continue;
-			$render_slots[(int) round($azimuth/20)] = $v2->getName();
+			$render_slots[(int) 10 - round($azimuth/20)] = $v2->getName();
 		}
 		return implode('', $render_slots);
 	}
